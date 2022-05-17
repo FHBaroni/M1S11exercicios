@@ -10,11 +10,13 @@ export class M1s11ex6Component implements OnInit {
   diaAniv?: number;
   senha: string = '';
   nome: string = '';
-  exibir() {
+  mostarInformacoes() {
     console.log(
       `nome de usuario: ${this.nome}, aniversário dia ${this.diaAniv}, cpf: ${this.cpf}, senha: ${this.senha}`
     );
   }
+  mostrar: boolean = false;
+
   constructor() {}
 
   ngOnInit(): void {}

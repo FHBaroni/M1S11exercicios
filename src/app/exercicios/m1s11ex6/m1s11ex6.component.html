@@ -1,11 +1,42 @@
-<div class="form-group">
-  <label> Dia do aniversário: </label>
-  <input class="form-control" [(ngModel)]="diaAniv" /><br />
-  <label>Nome de usuário:</label>
-  <input type="email" class="form-control" [(ngModel)]="nome" /><br />
-  <label>CPF: </label>
-  <input class="form-control" [(ngModel)]="cpf" /><br />
-  <label>Senha: </label>
-  <input class="form-control" [(ngModel)]="senha" /><br />
-  <button (click)="exibir()">Cadastrar</button>
+<div class="container-fluid">
+  <form #form="ngForm" (ngSubmit)="mostarInformacoes(); form.reset()">
+    <label> Dia do aniversário: </label>
+    <input
+      class="form-control"
+      [(ngModel)]="diaAniv"
+      name="diaAniv"
+      type="number"
+      min="1"
+      max="31"
+    />
+    <br />
+    <label>Nome de usuário:</label>
+    <input
+      type="email"
+      class="form-control"
+      [(ngModel)]="nome"
+      name="nome"
+    /><br />
+    <label>CPF: </label>
+    <input
+      class="form-control"
+      [(ngModel)]="cpf"
+      name="cpf"
+      type="text"
+      required
+    /><br />
+    <label>Senha: </label>
+    <input
+      class="form-control"
+      [(ngModel)]="senha"
+      name="senha"
+      type="text"
+      required
+    />
+    <br />
+
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+      Cadastrar
+    </button>
+  </form>
 </div>
