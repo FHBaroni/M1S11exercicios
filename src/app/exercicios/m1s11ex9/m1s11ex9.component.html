@@ -1,0 +1,74 @@
+<div class="container-fluid">
+  <form #form="ngForm" (ngSubmit)="salvarInformacoes()">
+    <label> Nome do dono </label>
+    <input
+      class="form-control"
+      [(ngModel)]="objetoCard.nomeDono"
+      name="diaAniv"
+      type="text"
+      placeholder="Nome do Dono"
+      required
+    />
+    <br />
+    <label>Email</label>
+    <input
+      type="email"
+      placeholder="E-mail"
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+      class="form-control"
+      [(ngModel)]="objetoCard.email"
+      name="nome"
+      required
+    /><br />
+
+    <label>CPF: </label>
+    <input
+      class="form-control"
+      [(ngModel)]="objetoCard.CPF"
+      name="cpf"
+      type="number"
+      placeholder="CPF"
+      min="11"
+      required
+    /><br />
+
+    <label>Nome do cachorro: </label>
+    <input
+      class="form-control"
+      [(ngModel)]="objetoCard.nomePet"
+      name="nomePet"
+      type="text"
+      placeholder="Nome do pet"
+      required
+    />
+    <br />
+
+    <label>Código de identificação: </label>
+    <input
+      class="form-control"
+      [(ngModel)]="objetoCard.codigoId"
+      name="codigoId"
+      type="text"
+      placeholder="Código id"
+      required
+    />
+
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+      Cadastrar
+    </button>
+  </form>
+</div>
+
+<div *ngIf="showModal === true" class="modal">
+  <div class="modal__content">
+    <h1>Ficha de cadastro</h1>
+    <p>
+      Nome do dono: {{ this.objetoCard.nomeDono }} <br />
+      CPF: {{ this.objetoCard.CPF }}<br />
+      Email: {{ this.objetoCard.email }}<br />
+      Nome do Pet: {{ this.objetoCard.nomePet }}<br />
+      Código: {{ this.objetoCard.codigoId }}
+    </p>
+    <a (click)="showModal = !showModal" class="modal__close">&times;</a>
+  </div>
+</div>

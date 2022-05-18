@@ -8,6 +8,8 @@ import { M1s11ex4Component } from './exercicios/m1s11ex4/m1s11ex4.component';
 import { M1s11ex5Component } from './exercicios/m1s11ex5/m1s11ex5.component';
 import { M1s11ex6Component } from './exercicios/m1s11ex6/m1s11ex6.component';
 import { M1s11ex8Component } from './exercicios/m1s11ex8/m1s11ex8.component';
+import { CommonModule } from '@angular/common';
+import { M1s11ex9Component } from './exercicios/m1s11ex9/m1s11ex9.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,9 @@ import { M1s11ex8Component } from './exercicios/m1s11ex8/m1s11ex8.component';
     M1s11ex5Component,
     M1s11ex6Component,
     M1s11ex8Component,
+    M1s11ex9Component,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, CommonModule],
   providers: [],
   bootstrap: [AppComponent],
 })
